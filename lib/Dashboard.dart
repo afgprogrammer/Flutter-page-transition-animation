@@ -1,3 +1,4 @@
+import 'package:day6_fitness/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -26,12 +27,12 @@ class Dashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: 10,),
-              Text("Today", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800]),),
+              FadeAnimation(1, Text("Today", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800]),)),
               SizedBox(height: 20,),
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: Container(
+                    child: FadeAnimation(1, Container(
                       width: 100,
                       margin: EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
@@ -48,16 +49,16 @@ class Dashboard extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Steps", style: TextStyle(color: Colors.white, fontSize: 30),),
+                            FadeAnimation(1.2, Text("Steps", style: TextStyle(color: Colors.white, fontSize: 30),)),
                             SizedBox(height: 20,),
-                            Text("3 500", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w100),),
+                            FadeAnimation(1.4, Text("3 500", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w100),)),
                           ],
                         ),
                       ),
-                    ),
+                    ))
                   ),
                   Expanded(
-                    child: Container(
+                    child: FadeAnimation(1, Container(
                       width: 100,
                       margin: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
@@ -74,20 +75,20 @@ class Dashboard extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Sports", style: TextStyle(color: Colors.white, fontSize: 30),),
+                            FadeAnimation(1.2, Text("Sports", style: TextStyle(color: Colors.white, fontSize: 30),)),
                             SizedBox(height: 20,),
-                            Text("25 Min", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w100),),
+                            FadeAnimation(1.4, Text("25 Min", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w100),)),
                           ],
                         ),
                       ),
-                    ),
+                    )),
                   ),
                 ],
               ),
               SizedBox(height: 40,),
-              Text("Health Categories", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold, fontSize: 20),),
+              FadeAnimation(1.4, Text("Health Categories", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold, fontSize: 20),)),
               SizedBox(height: 20,),
-              Container(
+              FadeAnimation(1, Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -96,45 +97,45 @@ class Dashboard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(
+                      FadeAnimation(1, Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           // borderRadius: BorderRadius.circular(10),
                           border: Border(bottom: BorderSide(color: Colors.grey[200]))
                         ),
-                        child: Text("Activity", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
-                      ),
-                      Container(
+                        child: Text("Activity 1", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
+                      )),
+                      FadeAnimation(1.2, Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           // borderRadius: BorderRadius.circular(10),
                           border: Border(bottom: BorderSide(color: Colors.grey[200]))
                         ),
-                        child: Text("Activity", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
-                      ),
-                      Container(
+                        child: Text("Activity 2", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
+                      )),
+                      FadeAnimation(1.4, Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           // borderRadius: BorderRadius.circular(10),
                           border: Border(bottom: BorderSide(color: Colors.grey[200]))
                         ),
-                        child: Text("Activity", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
-                      ),
-                      Container(
+                        child: Text("Activity 3", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
+                      )),
+                      FadeAnimation(1.6, Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           // borderRadius: BorderRadius.circular(10),
                           border: Border(bottom: BorderSide(color: Colors.grey[200]))
                         ),
-                        child: Text("Activity", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
-                      ),
+                        child: Text("Activity 4", style: TextStyle(color: Colors.grey[800], fontSize: 15, fontWeight: FontWeight.bold),),
+                      )),
                     ]
                   ),
-              )
+              ))
             ],
           ),
         ),

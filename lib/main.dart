@@ -1,3 +1,4 @@
+import 'package:day6_fitness/Animation/FadeAnimation.dart';
 import 'package:day6_fitness/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -70,8 +71,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: PageView(
         controller: _pageController,
         children: <Widget>[
-          makePage(image: 'assets/images/one.jpg'),
           makePage(image: 'assets/images/two.jpg'),
+          makePage(image: 'assets/images/one.jpg'),
           makePage(image: 'assets/images/three.jpg'),
         ],
       ),
@@ -101,31 +102,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: 60,),
-              Text('Exerciese 1', style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),),
+              FadeAnimation(1, Text('Exerciese', style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),)),
               SizedBox(height: 40,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("15", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),),
-                  Text("Minutes", style: TextStyle(color: Colors.white, fontSize: 30),),
+                  FadeAnimation(1, Text("15", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
+                  FadeAnimation(1.2, Text("Minutes", style: TextStyle(color: Colors.white, fontSize: 30),)),
                 ],
               ),
               SizedBox(height: 30,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("3", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),),
-                  Text("Exercises", style: TextStyle(color: Colors.white, fontSize: 30),),
+                  FadeAnimation(1, Text("3", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
+                  FadeAnimation(1.2, Text("Exercises", style: TextStyle(color: Colors.white, fontSize: 30),)),
                 ],
               ),
               SizedBox(height: 180,),
-              Align(
+              FadeAnimation(1, Align(
                 child: Text("Start the morning with your health", 
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w100),),
-              ),
+              )),
               SizedBox(height: 30,),
-              Align(
+              FadeAnimation(1, Align(
                 alignment: Alignment.bottomCenter,
                 child: AnimatedBuilder(
                   animation: rippleAnimation,
@@ -135,7 +136,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.blue.withOpacity(.4)
+                        color: Colors.white.withOpacity(.4)
                       ),
                       child: InkWell(
                         onTap: () {
@@ -149,7 +150,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.blue
+                                color: Colors.white
                               ),
                             ),
                           ),
@@ -158,7 +159,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-              )
+              ))
             ],
           ),
         ),
