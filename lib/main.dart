@@ -90,42 +90,52 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomRight,
             colors: [
               Colors.black.withOpacity(.3),
-              Colors.black.withOpacity(.3),
+              Colors.black.withOpacity(.2),
             ]
           )
         ),
         child: Padding(
-          padding: EdgeInsets.all(40),
+          padding: EdgeInsets.symmetric(vertical: 40, horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              SizedBox(height: 60,),
-              FadeAnimation(1, Text('Exerciese', style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),)),
-              SizedBox(height: 40,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  FadeAnimation(1, Text("15", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
-                  FadeAnimation(1.2, Text("Minutes", style: TextStyle(color: Colors.white, fontSize: 30),)),
+                children: [
+                  SizedBox(height: 60,),
+                  FadeAnimation(1.5, Text('Good day\nhealth body', style: TextStyle(color: Color.fromARGB(255, 200, 224, 229), fontSize: 45, fontWeight: FontWeight.w900),)),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1.5, Text('With this app you can try different activities\nand choose what is more enjoyable for you.', style: TextStyle(color: Color.fromARGB(255, 185, 202, 206), fontSize: 18, height: 1.4, fontWeight: FontWeight.w300),)),
+                  SizedBox(height: 40,),
                 ],
               ),
-              SizedBox(height: 30,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  FadeAnimation(1, Text("3", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
-                  FadeAnimation(1.2, Text("Exercises", style: TextStyle(color: Colors.white, fontSize: 30),)),
-                ],
-              ),
-              SizedBox(height: 180,),
-              FadeAnimation(1, Align(
-                child: Text("Start the morning with your health", 
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w100),),
-              )),
-              SizedBox(height: 30,),
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: <Widget>[
+              //     FadeAnimation(1, Text("15", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
+              //     FadeAnimation(1.2, Text("Minutes", style: TextStyle(color: Colors.white, fontSize: 30),)),
+              //   ],
+              // ),
+              // SizedBox(height: 30,),
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: <Widget>[
+              //     FadeAnimation(1, Text("3", style: TextStyle(color: Colors.yellow[400], fontSize: 40, fontWeight: FontWeight.bold),)),
+              //     FadeAnimation(1.2, Text("Exercises", style: TextStyle(color: Colors.white, fontSize: 30),)),
+              //   ],
+              // ),
+              // SizedBox(height: 180,),
+              // FadeAnimation(1, Align(
+              //   child: Text("Start the morning with your health", 
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w100),),
+              // )),
+              // SizedBox(height: 30,),
               FadeAnimation(1, Align(
                 alignment: Alignment.bottomCenter,
                 child: AnimatedBuilder(
@@ -151,6 +161,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.white
+                              ),
+                              child: scaleController.status == AnimationStatus.forward || scaleController.status == AnimationStatus.completed ? null : Center(
+                                child: Icon(Icons.fingerprint, size: 40,)
                               ),
                             ),
                           ),
